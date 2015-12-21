@@ -199,5 +199,5 @@ def draw_causal_graph(result_order, result_matrix, observed_data_labels, output_
             if result_matrix[i][j] != 0:
                 G.edge(str(observed_data_labels[result_order[j]]), str(observed_data_labels[result_order[i]]), str(result_matrix[i][j]))
 
-    G.render("{0}.{1}".format(output_name, format))
+    G.render(output_name)
     return "{0}.{1}".format(output_name, format)

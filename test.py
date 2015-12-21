@@ -12,4 +12,4 @@ labels = ['a','b','c','d','e']
 result = DirectLiNGAM(data, processes=1)
 result_order = result[0]
 result_matrix = result[1]
-draw_causal_graph(result_order, result_matrix, labels)
+draw_causal_graph(result_order, result_matrix, labels, output_name='test')
