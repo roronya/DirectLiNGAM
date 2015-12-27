@@ -47,6 +47,17 @@ def calc_log_determinant(X):
     U = np.log(U).sum()
     return U
 
+def centering_gram_matrix(K):
+    """グラム行列をセンタリングする
+    Args:
+        K: グラム行列
+    Returns:
+        センタリングしたグラム行列
+    """
+    n = len(K)
+    P = np.array([[-1/n if i!=j else (n-2)/n for j in range(n)] for i in range(n)])
+    return P.dot(K).dot(P)
+
 def calc_MI_kernel_value(x, r, kappa=2*10**(-2)):
     """カーネル法を利用して相互情報量を計算する
     Args:
@@ -58,6 +69,8 @@ def calc_MI_kernel_value(x, r, kappa=2*10**(-2)):
     """
     K_1 = generate_gram_matrix(x)
     K_2 = generate_gram_matrix(r)
+    K_1 = centering_gram_matrix(K_1)
+    K_2 = centering_gram_matrix(K_2)
     n = len(x)
     numer_11 = (K_1 + ((n*kappa)/2)*np.eye(n, n))
     numer_11 = numer_11.dot(numer_11)

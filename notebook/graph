@@ -1,0 +1,18 @@
+digraph {
+	node [shape=circle]
+	a [label=a]
+	b [label=b]
+	c [label=c]
+	d [label=d]
+	e [label=e]
+		a -> b [label=0.989133835433]
+		a -> c [label=2.00808234624]
+		b -> c [label=1.00996196891]
+		a -> d [label=4.00487747454]
+		b -> d [label=1.96256635928]
+		c -> d [label=0.999753444497]
+		a -> e [label=8.01816108376]
+		b -> e [label=3.92304568693]
+		c -> e [label=2.02488584907]
+		d -> e [label=0.989337298754]
+}

@@ -1,3 +1,8 @@
+import os
+import sys
+path = os.path.join(os.path.dirname(__file__), '../../')
+sys.path.append(path)
+
 from DirectLiNGAM import DirectLiNGAM, draw_causal_graph
 import numpy as np
 import pandas as pd
